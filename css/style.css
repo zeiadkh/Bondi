@@ -1,0 +1,353 @@
+:root {
+  --dark: #19283f;
+  --green: #33d1cc;
+  --red: #ff3150;
+  --yellow: #ffc400;
+  --section: #eff7fa;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 2009px;
+}
+
+/* navbar */
+.navbar {
+  background-color: var(--dark);
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+  color: var(--green);
+}
+.navbar .search {
+  color: white;
+  border-left: solid 1px var(--green);
+}
+.navbar-toggler {
+  color: white;
+  font-size: 1.5rem;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler[aria-expanded="true"] {
+  border: 1px var(--green) solid;
+}
+/* end navbar */
+
+/*start landing */
+.landing {
+  background: var(--dark);
+  min-height: 100vh;
+}
+.main-btn {
+  background-color: var(--red);
+  color: var(--yellow) !important;
+  padding: 0.5rem 1rem;
+}
+.main-btn:hover{
+  transition: 0.3s;
+  color: var(--dark)!important
+}
+/* end landing */
+
+/* features */
+
+.sec-title::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  background-color: var(--green);
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: -20px;
+}
+
+.icons {
+  height: 200px;
+}
+.icons svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.icons .num {
+  font-size: 12rem;
+  color: var(--section);
+}
+.icons svg:not(.num) {
+  color: var(--green);
+  bottom: 0;
+}
+.features h4 {
+  color: var(--yellow);
+}
+
+/* end features */
+
+/* gallery */
+.gallery-sec {
+  background-color: var(--section);
+}
+
+.gallery ul a:not(.active) {
+  color: var(--dark);
+}
+.gallery ul a:not(.active):hover {
+  transition: 0.3s;
+  color: var(--yellow);
+}
+.gallery *:hover {
+  color: var(--dark);
+}
+.gallery .photo::before {
+  position: absolute;
+  content: "";
+  width: calc(0%);
+  height: calc(100% - 10px);
+  background-color: var(--green);
+  transition: 0.5s ease-in-out;
+  left: 17px;
+  opacity: 0.5;
+  top: 5px;
+}
+.gallery .photo::after {
+  content: "Application";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  line-height: calc(134px / 2);
+  opacity: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.gallery .photo:hover:before {
+  transition: 0.5s ease-in-out;
+  width: calc(100% - 34px);
+}
+.gallery .photo:hover:after {
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+
+/* end gallery */
+
+/* about */
+.about .txt {
+  max-width: 500px;
+}
+/* end about */
+
+/* team */
+.team {
+  background-color: var(--section);
+}
+.team h2 {
+  color: var(--yellow);
+}
+.team .image::after {
+  content: "Luke Skywalker";
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+  background-color: var(--green);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+.team p {
+  max-width: 500px;
+}
+
+/* end team */
+
+/* start */
+.start {
+  background-color: var(--dark);
+}
+/* end start */
+/* blog */
+.blog .txt-card {
+  max-width: 602px;
+  margin: 0 auto 1rem auto;
+}
+/*end blog */
+/* subscribe */
+.subscribe {
+  background-color: var(--yellow);
+}
+.subscribe input[type="email"] {
+  border: 0;
+  border-bottom: 1px white solid;
+  caret-color: rgba(255, 255, 255, 0.597);
+}
+.subscribe input[type="email"]:focus {
+  outline: none;
+}
+
+.subscribe input[type="email"]::placeholder {
+  color: white;
+  text-transform: capitalize;
+}
+.subscribe button {
+  background-color: var(--dark);
+  color: var(--yellow);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+/* end subscribe */
+
+/* footer */
+.footer {
+  background-color: var(--dark);
+}
+.footer .bondi span span {
+  color: var(--yellow);
+  text-transform: capitalize;
+}
+.footer .contact {
+  cursor: pointer;
+}
+.footer svg {
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: white;
+}
+.footer svg.fa-facebook {
+  background-color: #1877f2;
+}
+.footer svg.fa-twitter {
+  background-color: #1da1f2;
+}
+.footer svg.fa-linkedin {
+  background-color: #0077b5;
+}
+.footer svg.fa-youtube {
+  background-color: #ff0000;
+}
+/* end footer */
+
+/* form */
+.overlay {
+  height: calc(100vh + 55px);
+  background-color: rgba(0, 0, 0, 0.527);
+  top: -55px;
+}
+.form-login {
+  top: 110%;
+  transition: 0.5s;
+  z-index: 3000;
+  height: 100vh;
+}
+.form-login.active {
+  top: 55px;
+}
+form.login {
+  background-color: var(--dark);
+  background-image: linear-gradient(90deg, #398496 0%, #c0564f 100%);
+  max-width: 600px;
+  height: 500px;
+  color: var(--yellow);
+  border-radius: 0.5rem;
+  position: relative;
+}
+.login input {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+.login input:not(.valid):focus {
+  -webkit-box-shadow: 0px 6px 6px 0px rgba(174, 255, 0, 0.418);
+  -moz-box-shadow: 0px 6px 6px 0px rgba(174, 255, 0, 0.418);
+  box-shadow: 0px 6px 6px 0px rgba(174, 255, 0, 0.418);
+}
+.login button {
+  background-color: var(--dark);
+  color: var(--yellow);
+  transition: 0.3s;
+}
+.login button:hover {
+  text-decoration: underline;
+}
+.login span {
+  cursor: pointer;
+  color: var(--yellow);
+}
+.login span:hover {
+  transition: 0.3s;
+  text-decoration: underline;
+}
+.exit {
+  width: auto;
+  padding: 0;
+  background: #2370b800;
+  top: 0;
+  right: 10%;
+  color: var(--red);
+  font-size: 3rem;
+  border: none;
+  transition: 0.3s;
+}
+.exit:hover {
+  color: var(--dark);
+}
+.error,
+.pass-error {
+  color: var(--red);
+  margin-top: -0.5rem;
+}
+.pass-error {
+  margin-top: -2rem !important;
+}
+.error.active,
+.pass-error.active {
+  display: block !important;
+}
+.notvalid {
+  border: 5px solid var(--red) !important;
+}
+.valid {
+  border: 4px solid var(--green) !important;
+}
+
+#scrollup{
+  border:none;
+  padding: 0;
+  position: fixed;
+  right: 58px;
+  top: 85vh;
+  width: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+#scrollup.show{
+  opacity: 1;
+}
+#scrollup svg{
+  background: var(--red);
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--section);
+}
+
+/* scroll bar */
+::-webkit-scrollbar{
+  background-color: var(--dark);
+  width: 8px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--yellow);
+  border-radius: 5px;
+}
